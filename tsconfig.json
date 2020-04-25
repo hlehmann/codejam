@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "diagnostics": false,
+    "skipLibCheck": true,
+    "lib": ["ESNext"],
+    "strict": true,
+    "target": "ES2019"
+  }
+}
