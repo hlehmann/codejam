@@ -19,21 +19,20 @@ const test = () => {
   const arr = range(N);
 
   // set diag
-  const [a,b,c] = treeSearch(
+  const diag = treeSearch(
     (_l, level) => level !== 3 ? arr : [],
     (_l, level, nodes) => {
       if (level === 3) {
         const [a,b,c] = nodes;
         if (K === N + (N - 2) * a + b + c && (a === b) === (a === c)) {
-          return nodes;
+          const diag = [...arr].fill(a);
+          diag[0] = c;
+          diag[1] = b;
+          return diag;
         }
       } 
     },
   )!;
-
-  const diag = [...arr].fill(a);
-  diag[0] = c;
-  diag[1] = b;
   logger(diag);
 
   // prepare links
@@ -41,15 +40,13 @@ const test = () => {
   diag.forEach((v, i) => removeArrayValue(available[i], v))
 
   // generate rows
-  const rows:number[][] = [];
-  for (let i = 0; i < N ; i ++) {
+  const rows = arr.map(i => {
     const links = arr.map(j => j === i ? [diag[i]] : available[j]);
-    const row = bipartiteMatching(links);
-    if (!row) return;
+    const row = bipartiteMatching(links)!;
     logger(i, row)
     row.forEach((v, i) => removeArrayValue(available[i], v))
-    rows.push(row);
-  }
+    return row;
+  })
 
   const table = rows.map(row => row.map(v => v+1).join(" ")).join("\n");
   return "POSSIBLE\n"+table;
