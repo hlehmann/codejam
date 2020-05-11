@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nodemon --exec ts-node --transpile-only index.ts ",
     "build": "rollup -c",
+    "logs": "tail -f log.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

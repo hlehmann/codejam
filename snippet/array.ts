@@ -59,3 +59,31 @@ export const getAllIntervals = (x1:number, x2: number) => {
   }
   return intervals;
 }
+
+export const getAllPermutations = <D>(source: D[], size = source.length):D[][] => {
+  if (size === 1) {
+    return source.map(value => [value]);
+  }
+  if (size === 0) {
+    return [];
+  }
+  return source.flatMap((value, index) => {
+    const next = [...source];
+    next.splice(index, 1);
+    return getAllPermutations(next, size - 1).map(perm => [value, ...perm]);
+  });
+}
+
+export const getAllSets = <D>(source: D[], size: number):D[][] => {
+  if (size === 1) {
+    return source.map(value => [value]);
+  }
+  if (size === 0) {
+    return [];
+  }
+  return source.flatMap((value, index) => {
+    const next = [...source];
+    next.splice(0, index + 1);
+    return getAllSets(next, size - 1).map(perm => [value, ...perm]);
+  });
+}

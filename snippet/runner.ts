@@ -4,30 +4,19 @@ import { splitStr } from "./string";
 
 let input:string[] = [];
 
-/**
- * Convert string to lines
- * 
- * const sample = `...`;
- * loadSample(sample)
- */
 export const loadSample = (txt:string) => {
   input = txt.trim().split("\n");
 };
 
-/**
- * Load lines from stdin
- *
- * loadStdin()
- */
 export const loadStdin = () => {
   input = fs.readFileSync(0,'utf8').trim().split('\n');
 }
 
 export const getLine = () => input.shift()!;
-export const getParsedLine = () => parseInt(getLine());
+export const getParsedLine = () => parseFloat(getLine());
 export const getSplitedLine = () => splitStr(getLine());
 export const getLines = (n: number) => input.splice(0, n);
-export const getParsedLines = (n: number) => getLines(n).map((s) => parseInt(s));
+export const getParsedLines = (n: number) => getLines(n).map((s) => parseFloat(s));
 export const getSplitedLines = (n: number) => getLines(n).map((s) => splitStr(s));
 
 export const sendLine = (line: string) => {

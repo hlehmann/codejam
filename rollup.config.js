@@ -17,7 +17,7 @@ export default {
       include: [
         '**/*.ts',
       ],
-      functions: ['logger','cleanLog']
+      functions: ['logger','cleanLog', 'devRunner', 'writeLog']
     }),
   ],
 };
