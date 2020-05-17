@@ -18,6 +18,12 @@ export const logger = (...messages: any[]) => {
   writeLog(messages.map(s => JSON.stringify(s)).join(" "))
 };
 
+export const loggerStr = (...messages: any[]) => {
+  // console.log(...messages)
+  writeLog(messages.join(" "))
+};
+
+
 export const arrLogger = (values: any[]) => writeLog(values.map(s=> s).join(" "))
 export const tableLogger = (values: any[][]) => writeLog(values.map(v => v.map(s=> s).join(" ")).join("\n"))
 

@@ -5,7 +5,24 @@
  * a < b or a > b
  */
 
-export const binarySearchFloat = async (
+export const binarySearchBigInt = (
+  a: bigint, 
+  b: bigint,
+  test:(current:bigint) => boolean,
+) => {
+  while(b - a > 1) {
+    const current = (a + b) / 2n;
+    const result = test(current);
+    if (result) {
+      a = current;
+    } else {
+      b = current;
+    }
+  }
+  return a;
+}
+
+export const binarySearchFloat = (
   a: number, 
   b : number,
   test:(current:number) => boolean,
@@ -41,7 +58,7 @@ export const binarySearchFloatAsync = async (
   return a;
 }
 
-export const binarySearchInt = async (
+export const binarySearchInt = (
   a: number, 
   b : number,
   test:(current:number) => boolean | Promise<boolean>,
@@ -49,7 +66,7 @@ export const binarySearchInt = async (
 ) => {
   while(Math.abs(b - a) > precision) {
     const current = Math.floor((a + b) / 2);
-    const result = await test(current);
+    const result = test(current);
     if (result) {
       a = current;
     } else {

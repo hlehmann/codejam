@@ -31,12 +31,12 @@ export const runner =  (test: (...args:number[]) => any) => {
 
   let testNumber = 1;
   while (testNumber <= T) {
-    let res: string | number;
+    let res: string | number | bigint;
     try {
       logger("--- test #"+testNumber+" ---");
       res = test(...params);
     } catch(e) {
-      if (typeof e ==="string" || typeof e === "number") {
+      if (typeof e ==="string" || typeof e === "number" || typeof e === "bigint") {
         res = e;
       } else {
         throw e;

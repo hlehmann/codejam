@@ -4,6 +4,6 @@
     "skipLibCheck": true,
     "lib": ["ESNext"],
     "strict": true,
-    "target": "ES2019"
+    "target": "ESNext"
   }
 }

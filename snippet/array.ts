@@ -87,3 +87,40 @@ export const getAllSets = <D>(source: D[], size: number):D[][] => {
     return getAllSets(next, size - 1).map(perm => [value, ...perm]);
   });
 }
+
+export const groupValues = <D>(arr:D[]) => {
+  const groups = new Map<D, number[]>();
+
+  arr.forEach((value, index) => {
+    let indexes = groups.get(value);
+    if (!indexes) {
+      indexes = [];
+      groups.set(value, indexes);
+    }
+    indexes.push(index);
+  })
+
+  return [...groups.entries()];
+}
+
+export const findIndexes = <D>(arr:D[], value:D) => {
+  const indexes:number[] = [];
+
+  arr.forEach((v, index) => {
+    if (v === value) {
+      indexes.push(index);
+    }
+  })
+
+  return indexes;
+}
+
+export const findIntersect = <D>(arr1: D[], arr2: D[]) => {
+  for(let i= 0; i < arr1.length;i++){
+    const value = arr1[i];
+    const j = arr2.indexOf(value)
+    if (j !== -1) {
+      return [value, i, j] as [D, number,number];
+    }
+  }
+}
