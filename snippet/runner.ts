@@ -4,6 +4,10 @@ import { splitStr } from "./string";
 
 let input:string[] = [];
 
+export const loadFile = (file: string) => {
+  input = fs.readFileSync(file,'utf8').trim().split('\n');  
+}
+
 export const loadSample = (txt:string) => {
   input = txt.trim().split("\n");
 };

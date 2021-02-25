@@ -1,1 +1,1 @@
-import "./jams/2020_2_2"
+import "./hashcode/2021_practice/script"
