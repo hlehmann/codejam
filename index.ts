@@ -1,1 +1,1 @@
-import "./hashcode/2021_practice/script"
+import "./hashcode/2021_qualif/script"
