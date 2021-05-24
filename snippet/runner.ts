@@ -1,6 +1,6 @@
 import { logger, cleanLog } from "./logger";
 import * as fs from 'fs';
-import { splitStr } from "./string";
+import { parseSplitStr, splitStr } from "./string";
 
 let input:string[] = [];
 
@@ -18,10 +18,11 @@ export const loadStdin = () => {
 
 export const getLine = () => input.shift()!;
 export const getParsedLine = () => parseFloat(getLine());
-export const getSplitedLine = () => splitStr(getLine());
+export const getSplittedLine = () => splitStr(getLine());
+export const getParsedSplitedLine = () => parseSplitStr(getLine());
 export const getLines = (n: number) => input.splice(0, n);
 export const getParsedLines = (n: number) => getLines(n).map((s) => parseFloat(s));
-export const getSplitedLines = (n: number) => getLines(n).map((s) => splitStr(s));
+export const getParsedSplitedLines = (n: number) => getLines(n).map((s) => parseSplitStr(s));
 
 export const sendLine = (line: string) => {
   logger("OUT", line);

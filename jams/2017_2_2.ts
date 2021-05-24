@@ -1,4 +1,4 @@
-import { loadStdin, loadSample, runner, getSplitedLine, getLine, getParsedLine, getSplitedLines } from "../snippet/runner";
+import { loadStdin, loadSample, runner, getParsedSplitedLine, getLine, getParsedLine, getParsedSplitedLines } from "../snippet/runner";
 import { logger, devRunner, tableLogger } from "../snippet/logger";
 import { range, excludeArray, groupValues, findIndexes, findIntersect} from "../snippet/array";
 import { formatFloat } from "../snippet/string";
@@ -25,7 +25,7 @@ process.env.NODE_ENV === "production"
 const test = () => {
   // not working
   const N = getParsedLine();
-  const A = getSplitedLines(N);
+  const A = getParsedSplitedLines(N);
   logger(N,A)
 
   const arr = range(N);

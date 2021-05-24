@@ -1,4 +1,4 @@
-import { loadStdin, loadSample, runner, getSplitedLine } from "../snippet/runner";
+import { loadStdin, loadSample, runner, getParsedSplitedLine } from "../snippet/runner";
 import { logger, devRunner, tableLogger } from "../snippet/logger";
 import { range} from "../snippet/array";
 import { formatFloat } from "../snippet/string";
@@ -24,9 +24,9 @@ devRunner(() => {
 })
 
 const test = () => {
-  const [N, K] = getSplitedLine();
+  const [N, K] = getParsedSplitedLine();
   logger(N,K)
-  const P = getSplitedLine();
+  const P = getParsedSplitedLine();
   P.sort()
   logger(P)
   

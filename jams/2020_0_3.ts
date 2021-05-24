@@ -1,4 +1,4 @@
-import { runner, getParsedLine, getSplitedLines, loadSample, loadStdin } from "../snippet/runner"
+import { runner, getParsedLine, getParsedSplitedLines, loadSample, loadStdin } from "../snippet/runner"
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020bdf9
 
@@ -25,7 +25,7 @@ process.env.NODE_ENV === "production"
 
 const test = () => {
   const N = getParsedLine();
-  const M = getSplitedLines(N).map((value, index) => [index, ...value]);
+  const M = getParsedSplitedLines(N).map((value, index) => [index, ...value]);
   M.sort((a,b) => a[1]-b[1]);
   
   let C = 0;

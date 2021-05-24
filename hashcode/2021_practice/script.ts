@@ -1,6 +1,6 @@
 import { findIntersect, range } from "../../snippet/array";
 import { randomInt } from "../../snippet/random";
-import { getLines, getSplitedLine, loadFile } from "../../snippet/runner"
+import { getLines, getParsedSplitedLine, loadFile } from "../../snippet/runner"
 import * as fs from "fs";
 
 type DataSet = {name: string}
@@ -11,7 +11,7 @@ const main = (dataSet:DataSet) => {
     const {name} = dataSet;
     console.log(name)
     loadFile(__dirname+"/in/"+name+".in");
-    const [M, T2, T3, T4] = getSplitedLine();
+    const [M, T2, T3, T4] = getParsedSplitedLine();
     const P = getLines(M).map((s) => s.split(" ").slice(1));
     const Pmax = P.map(l => l.length).reduce((a, b) => Math.max(a,b))
     const Pcoef = P.map(l => Math.ceil(l.length/Pmax*10))

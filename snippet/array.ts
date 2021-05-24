@@ -14,6 +14,9 @@ export const range = (n:number) => {
   return Array.from(new Array(n).keys());
 }
 
+export const first = <T>(arr: T[]) => arr[0];
+export const last = <T>(arr: T[]) => arr[arr.length-1];
+
 export const findOne = <T>(arr:T[], test: (item: T) => boolean) => {
   return arr.find(test);
 }
@@ -123,4 +126,16 @@ export const findIntersect = <D>(arr1: D[], arr2: D[]) => {
       return [value, i, j] as [D, number,number];
     }
   }
+}
+
+export const findMinIndex = <D>(arr: D[]) => {
+  let minIndex = 0;
+  let minValue = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < minValue) {
+      minValue = arr[i];
+      minIndex = i;
+    }
+  }
+  return minIndex;
 }

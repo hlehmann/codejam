@@ -1,16 +1,18 @@
+import { cpuUsage } from "process";
 import * as readline from "readline";
-import { logger, cleanLog } from "./logger";
+import { logger } from "./logger";
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
+  terminal: false,
 });
 
 export const getLineI = () => {
   return new Promise<string>((resolve) => {
     const cb = (line:string) => {
       rl.off("line", cb);
-      logger("II", line);
+      logger("IN", line);
       resolve(line);
     };
     rl.on("line", cb);
@@ -27,7 +29,6 @@ export const sendLineI = (line: string | number) => {
  */
 export const runnerI =  (test: (...args:number[]) => any) => {
   const main = async () => {
-
     const line = await getLineI();
     const [T, ...params] = line.split(" ").map((s) => parseInt(s));
     logger("params", T, ...params);
@@ -45,5 +46,5 @@ export const runnerI =  (test: (...args:number[]) => any) => {
       testNumber++;
     }
   }
-  main().finally(process.exit())
+  main().finally(() => process.exit())
 }

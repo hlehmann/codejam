@@ -1,1 +1,1 @@
-import "./hashcode/2021_qualif/script"
+import "./jams/2021_1C_1"

@@ -1,4 +1,4 @@
-import { loadSample, runner, getSplitedLine, getLines, loadStdin } from "../snippet/runner";
+import { loadSample, runner, getParsedSplitedLine, getLines, loadStdin } from "../snippet/runner";
 import { getColumn } from "../snippet/matice";
 import { logger } from "../snippet/logger";
 import { nimSum, getArrayMEX } from "../snippet/nim";
@@ -45,7 +45,7 @@ type Move = ["H"|"V", number]
 type Box = [number, number, number, number]; 
 
 const test = () => {
-  let [R, C] = getSplitedLine();
+  let [R, C] = getParsedSplitedLine();
   const radioactive = getLines(R).map((line) => line.split("").map((s) => s === "#"));
   const cache = new Map<string, number>()
 

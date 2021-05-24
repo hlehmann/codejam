@@ -1,4 +1,4 @@
-import { runner, loadSample, getSplitedLine, loadStdin } from "../snippet/runner"
+import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../snippet/runner"
 import { range, cloneArray, removeArrayValue } from "../snippet/array";
 import { treeSearch } from "../snippet/treeSearch";
 import { bipartiteMatching } from "../snippet/bipartiteMatching";
@@ -12,7 +12,7 @@ process.env.NODE_ENV === "production"
   : loadSample(get202005Sample())
 
 const test = () => {
-  const [N, K] = getSplitedLine();
+  const [N, K] = getParsedSplitedLine();
   logger(N,K)
   if (N === 3 && K%N !== 0) throw "IMPOSSIBLE";
   if (K === N+1 || K === N*N -1) throw "IMPOSSIBLE";

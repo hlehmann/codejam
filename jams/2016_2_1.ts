@@ -1,4 +1,4 @@
-import { loadStdin, loadSample, runner, getSplitedLine, getLine } from "../snippet/runner";
+import { loadStdin, loadSample, runner, getParsedSplitedLine, getLine } from "../snippet/runner";
 import { logger } from "../snippet/logger";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000201c91/0000000000201d1e
@@ -12,7 +12,7 @@ process.env.NODE_ENV === "production"
 2 2 0 2`)
 
 const test = () => {
-  const [N, R, P, S] = getSplitedLine();
+  const [N, R, P, S] = getParsedSplitedLine();
   logger(N, R, P,S)
 
   type Node = [string, string]; // player, root players

@@ -1,4 +1,4 @@
-import { runner, loadSample, getSplitedLine, loadStdin } from "../snippet/runner";
+import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../snippet/runner";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef2/00000000002d5b62
 
@@ -11,7 +11,7 @@ process.env.NODE_ENV === "production"
 -1 1`)
 
 const test = () => {
-  let [x, y] = getSplitedLine();
+  let [x, y] = getParsedSplitedLine();
 
   if (Math.abs(x + y) % 2 === 0) {
     throw "IMPOSSIBLE";

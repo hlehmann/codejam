@@ -1,4 +1,4 @@
-import { loadStdin, loadSample, runner, getSplitedLine, getParsedLine } from "../snippet/runner";
+import { loadStdin, loadSample, runner, getParsedSplitedLine, getParsedLine } from "../snippet/runner";
 import { logger } from "../snippet/logger";
 import { reverseMatrice, formatCharMatrice } from "../snippet/matice";
 
@@ -20,7 +20,7 @@ process.env.NODE_ENV === "production"
 
 const test = () => {
   const C = getParsedLine();
-  const B = getSplitedLine();
+  const B = getParsedSplitedLine();
   logger(C,B)
 
   if (B[0] === 0 || B[C-1] === 0) throw "IMPOSSIBLE";

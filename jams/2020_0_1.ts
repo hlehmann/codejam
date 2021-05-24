@@ -1,4 +1,4 @@
-import { runner, getParsedLine, getSplitedLines, loadSample, loadStdin } from "../snippet/runner"
+import { runner, getParsedLine, getParsedSplitedLines, loadSample, loadStdin } from "../snippet/runner"
 import { range, checkDistinctInt } from "../snippet/array";
 import { getColumn } from "../snippet/matice";
 
@@ -24,7 +24,7 @@ process.env.NODE_ENV === "production"
 
 const test = () => {
   const N = getParsedLine();
-  const M = getSplitedLines(N);
+  const M = getParsedSplitedLines(N);
   const arr = range(N);
 
   const k = arr.reduce((s, i) => s + M[i][i],0);

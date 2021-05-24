@@ -1,5 +1,5 @@
 
-import { loadStdin, loadSample, runner, getSplitedLine, getSplitedLines } from "../snippet/runner";
+import { loadStdin, loadSample, runner, getParsedSplitedLine, getParsedSplitedLines } from "../snippet/runner";
 import { range } from "../snippet/array";
 import { logger } from "../snippet/logger";
 
@@ -27,9 +27,9 @@ process.env.NODE_ENV === "production"
 
 const test = () => {
   // not working
-  const [C, D] = getSplitedLine();
-  const X = [[], ...getSplitedLine().map(x => -x)];
-  const DD = getSplitedLines(D)
+  const [C, D] = getParsedSplitedLine();
+  const X = [[], ...getParsedSplitedLine().map(x => -x)];
+  const DD = getParsedSplitedLines(D)
   logger(C,D, DD);
 
   const arr = range(C);

@@ -1,5 +1,5 @@
 import { range } from "../../snippet/array";
-import { getLines, getSplitedLine, loadFile } from "../../snippet/runner"
+import { getLines, getParsedSplitedLine, loadFile } from "../../snippet/runner"
 import * as fs from "fs";
 import { threadId } from "worker_threads";
 
@@ -16,7 +16,7 @@ const main = (dataSet:DataSet) => {
     const {name} = dataSet;
     console.log(name)
     loadFile(__dirname+"/in/"+name+".txt");
-    let [D, I, S, V, F] = getSplitedLine();
+    let [D, I, S, V, F] = getParsedSplitedLine();
     const intersections:Intersection[] = range(I).map((id) => ({id, lights: [], cycleTime: 0, expectedOrders: [],uniform:true, goodForFirstCar: false}))
     const streets:Street[] = getLines(S).map((s, id) => {
         const [from, to, name, time] = s.split(" ")
