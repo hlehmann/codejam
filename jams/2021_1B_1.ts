@@ -1,12 +1,5 @@
-import { visitParameterList } from "../node_modules/typescript/lib/typescript";
 import { range } from "../snippet/array";
-import { logger } from "../snippet/logger";
-import {
-  runner,
-  loadSample,
-  getParsedSplitedLine,
-  loadStdin,
-} from "../snippet/runner";
+import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../snippet/runner";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000435baf/00000000007ae694
 
@@ -22,7 +15,7 @@ const K = 10 ** 9;
 const check = (n: number) => n >= 0 && Number.isInteger(n);
 
 const test = () => {
-  let [A, B, C] = getParsedSplitedLine();
+  const [A, B, C] = getParsedSplitedLine();
 
   const cases = [
     [A, B, C],
@@ -33,9 +26,9 @@ const test = () => {
     [C, B, A],
   ];
 
-  for (let [a, b, c] of cases) {
-    for (let m of range(60)) {
-      for (let s of range(60)) {
+  for (const [a, b, c] of cases) {
+    for (const m of range(60)) {
+      for (const s of range(60)) {
         const n = (708 * K * s - c - 720 * K * m + b) / 708;
         if (!check(n)) continue;
         const r = 720 * n + 720 * K * s - c;

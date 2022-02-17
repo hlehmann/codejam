@@ -1,8 +1,8 @@
-import { runner, getParsedLine, getParsedSplitedLines, loadSample, loadStdin } from "../snippet/runner"
+import { runner, getParsedLine, getParsedSplitedLines, loadSample, loadStdin } from "../snippet/runner";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020bdf9
 
-process.env.NODE_ENV === "production" 
+process.env.NODE_ENV === "production"
   ? loadStdin()
   : loadSample(`4
 3
@@ -21,16 +21,16 @@ process.env.NODE_ENV === "production"
 150 250
 2
 0 720
-720 1440`)
+720 1440`);
 
 const test = () => {
   const N = getParsedLine();
   const M = getParsedSplitedLines(N).map((value, index) => [index, ...value]);
-  M.sort((a,b) => a[1]-b[1]);
-  
+  M.sort((a, b) => a[1] - b[1]);
+
   let C = 0;
   let J = 0;
-  let res:string[] = [];
+  const res: string[] = [];
   M.forEach(([index, start, end]) => {
     if (start >= C) {
       res[index] = "C";
@@ -39,11 +39,11 @@ const test = () => {
       res[index] = "J";
       J = end;
     } else {
-      throw "IMPOSSIBLE"
+      throw "IMPOSSIBLE";
     }
-  })
+  });
 
   return res.join("");
-}
+};
 
 runner(test);

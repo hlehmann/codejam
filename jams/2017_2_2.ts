@@ -1,12 +1,11 @@
-import { loadStdin, loadSample, runner, getParsedSplitedLine, getLine, getParsedLine, getParsedSplitedLines } from "../snippet/runner";
-import { logger, devRunner, tableLogger } from "../snippet/logger";
-import { range, excludeArray, groupValues, findIndexes, findIntersect} from "../snippet/array";
-import { formatFloat } from "../snippet/string";
-import { reverseMatrice, formatCharMatrice, getRow, getColumn } from "../snippet/matice";
+import { loadStdin, loadSample, runner, getParsedLine, getParsedSplitedLines } from "../snippet/runner";
+import { logger } from "../snippet/logger";
+import { range, excludeArray, groupValues, findIndexes, findIntersect } from "../snippet/array";
+import { getRow, getColumn } from "../snippet/matice";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000007706/0000000000045875
 
-process.env.NODE_ENV === "production" 
+process.env.NODE_ENV === "production"
   ? loadStdin()
   : loadSample(`4
 2
@@ -20,19 +19,18 @@ process.env.NODE_ENV === "production"
 1 2
 2
 2 2
--2 2`)
+-2 2`);
 
 const test = () => {
   // not working
   const N = getParsedLine();
   const A = getParsedSplitedLines(N);
-  logger(N,A)
+  logger(N, A);
 
   const arr = range(N);
-  const costumes = [...arr.map(i => i+1), ...arr.map(i => -i - 1)];
-  
-  const availableCs = arr.map(c => excludeArray(costumes, getColumn(A, c)))
+  const costumes = [...arr.map((i) => i + 1), ...arr.map((i) => -i - 1)];
 
+  const availableCs = arr.map((c) => excludeArray(costumes, getColumn(A, c)));
 
   let res = 0;
 
@@ -44,24 +42,23 @@ const test = () => {
       if (cs.length === 1) return;
       let minC = 0;
       let minCpt = Infinity;
-      cs.forEach(c => {
+      cs.forEach((c) => {
         const cpt = findIndexes(getColumn(A, c), value).length;
         if (cpt < minCpt) {
           minCpt = cpt;
           minC = c;
         }
-      })
-      cs.forEach(c => {
+      });
+      cs.forEach((c) => {
         if (c === minC) return;
         const [value, rr, cc] = findIntersect(availableR, availableCs[c])!;
         res++;
         A[r][c] = value;
-        availableR.splice(rr, 1)
-        availableCs[c].splice(cc, 1)
-      })
-    })
-  })
-
+        availableR.splice(rr, 1);
+        availableCs[c].splice(cc, 1);
+      });
+    });
+  });
 
   logger("c", availableCs);
 
@@ -70,20 +67,21 @@ const test = () => {
     const groups = groupValues(col);
     groups.forEach(([_value, rs]) => {
       if (rs.length === 1) return;
-      rs.forEach(r => {
+      rs.forEach((r) => {
         if (r === 0) return;
         const row = getRow(A, r);
         const availableR = excludeArray(costumes, row);
         const [value, rr, cc] = findIntersect(availableR, availableCs[c])!;
         res++;
         A[r][c] = value;
-        availableR.splice(rr, 1)
-        availableCs[c].splice(cc, 1)
-      })
-    })
-  })
+        availableR.splice(rr, 1);
+        availableCs[c].splice(cc, 1);
+      });
+    });
+  });
 
   return res;
-}
+};
 
-runner(test);''
+runner(test);
+("");
