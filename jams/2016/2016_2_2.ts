@@ -1,7 +1,7 @@
-import { loadStdin, loadSample, runner, getParsedSplitedLine } from "../snippet/runner";
-import { logger, devRunner, tableLogger } from "../snippet/logger";
-import { range } from "../snippet/array";
-import { formatFloat } from "../snippet/string";
+import { loadStdin, loadSample, runner, getParsedSplitedLine } from "../../snippet/runner";
+import { logger, devRunner, tableLogger } from "../../snippet/logger";
+import { range } from "../../snippet/array";
+import { formatFloat } from "../../snippet/string";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000201c91/0000000000201b71
 

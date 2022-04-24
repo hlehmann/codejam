@@ -1,5 +1,5 @@
-import { loadStdin, loadSample, runner, getParsedSplitedLine } from "../snippet/runner";
-import { logger } from "../snippet/logger";
+import { loadStdin, loadSample, runner, getParsedSplitedLine } from "../../snippet/runner";
+import { logger } from "../../snippet/logger";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000201c91/0000000000201d1e
 

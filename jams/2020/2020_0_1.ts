@@ -1,6 +1,6 @@
-import { runner, getParsedLine, getParsedSplitedLines, loadSample, loadStdin } from "../snippet/runner";
-import { range, checkDistinctInt } from "../snippet/array";
-import { getColumn } from "../snippet/matice";
+import { runner, getParsedLine, getParsedSplitedLines, loadSample, loadStdin } from "../../snippet/runner";
+import { range, checkDistinctInt } from "../../snippet/array";
+import { getColumn } from "../../snippet/matice";
 
 //https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209a9f
 

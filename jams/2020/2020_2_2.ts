@@ -1,6 +1,6 @@
-import { loadStdin, loadSample, runner, getParsedSplitedLine, getParsedSplitedLines } from "../snippet/runner";
-import { range } from "../snippet/array";
-import { logger } from "../snippet/logger";
+import { loadStdin, loadSample, runner, getParsedSplitedLine, getParsedSplitedLines } from "../../snippet/runner";
+import { range } from "../../snippet/array";
+import { logger } from "../../snippet/logger";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019ffb9/000000000033871f
 

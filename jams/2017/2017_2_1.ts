@@ -1,6 +1,6 @@
-import { loadStdin, loadSample, runner, getParsedSplitedLine, getParsedLine } from "../snippet/runner";
-import { logger } from "../snippet/logger";
-import { reverseMatrice, formatCharMatrice } from "../snippet/matice";
+import { loadStdin, loadSample, runner, getParsedSplitedLine, getParsedLine } from "../../snippet/runner";
+import { logger } from "../../snippet/logger";
+import { reverseMatrice, formatCharMatrice } from "../../snippet/matice";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000007706/00000000000459f2
 

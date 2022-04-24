@@ -1,7 +1,7 @@
-import { loadStdin, loadSample, runner, getParsedLine, getParsedSplitedLines } from "../snippet/runner";
-import { logger } from "../snippet/logger";
-import { range, excludeArray, groupValues, findIndexes, findIntersect } from "../snippet/array";
-import { getRow, getColumn } from "../snippet/matice";
+import { loadStdin, loadSample, runner, getParsedLine, getParsedSplitedLines } from "../../snippet/runner";
+import { logger } from "../../snippet/logger";
+import { range, excludeArray, groupValues, findIndexes, findIntersect } from "../../snippet/array";
+import { getRow, getColumn } from "../../snippet/matice";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000007706/0000000000045875
 

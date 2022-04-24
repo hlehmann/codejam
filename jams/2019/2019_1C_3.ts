@@ -1,7 +1,7 @@
-import { loadSample, runner, getParsedSplitedLine, getLines, loadStdin } from "../snippet/runner";
-import { getColumn } from "../snippet/matice";
-import { logger } from "../snippet/logger";
-import { nimSum, getArrayMEX } from "../snippet/nim";
+import { loadSample, runner, getParsedSplitedLine, getLines, loadStdin } from "../../snippet/runner";
+import { getColumn } from "../../snippet/matice";
+import { logger } from "../../snippet/logger";
+import { nimSum, getArrayMEX } from "../../snippet/nim";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/00000000000516b9/0000000000134cdf
 

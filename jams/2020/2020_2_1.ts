@@ -1,6 +1,6 @@
-import { loadStdin, loadSample, runner, getLine } from "../snippet/runner";
-import { binarySearchBigInt } from "../snippet/binarySearch";
-import { loggerStr } from "../snippet/logger";
+import { loadStdin, loadSample, runner, getLine } from "../../snippet/runner";
+import { binarySearchBigInt } from "../../snippet/binarySearch";
+import { loggerStr } from "../../snippet/logger";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019ffb9/00000000003384ea
 

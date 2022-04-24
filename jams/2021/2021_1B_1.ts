@@ -1,5 +1,5 @@
-import { range } from "../snippet/array";
-import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../snippet/runner";
+import { range } from "../../snippet/array";
+import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../../snippet/runner";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/0000000000435baf/00000000007ae694
 

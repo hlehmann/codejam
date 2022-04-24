@@ -1,4 +1,4 @@
-import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../snippet/runner";
+import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../../snippet/runner";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef2/00000000002d5b62
 

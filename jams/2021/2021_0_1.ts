@@ -1,6 +1,6 @@
-import { runner, getParsedLine, loadSample, loadStdin, getParsedSplitedLine } from "../snippet/runner";
-import { findMinIndex } from "../snippet/array";
-import { logger } from "../snippet/logger";
+import { runner, getParsedLine, loadSample, loadStdin, getParsedSplitedLine } from "../../snippet/runner";
+import { findMinIndex } from "../../snippet/array";
+import { logger } from "../../snippet/logger";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a/00000000006d0a5c
 

@@ -1,6 +1,6 @@
-import { runnerI, sendLineI, getLineI } from "../snippet/runnerI";
-import { findOneAsync } from "../snippet/array";
-import { binarySearchIntAsync } from "../snippet/binarySearch";
+import { runnerI, sendLineI, getLineI } from "../../snippet/runnerI";
+import { findOneAsync } from "../../snippet/array";
+import { binarySearchIntAsync } from "../../snippet/binarySearch";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fef2/00000000002d5b63
 

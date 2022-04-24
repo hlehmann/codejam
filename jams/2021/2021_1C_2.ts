@@ -1,6 +1,6 @@
-import { range } from "../snippet/array";
-import { logger } from "../snippet/logger";
-import { loadStdin, loadSample, runner, getLine } from "../snippet/runner";
+import { range } from "../../snippet/array";
+import { logger } from "../../snippet/logger";
+import { loadStdin, loadSample, runner, getLine } from "../../snippet/runner";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/00000000004362d7/00000000007c0f01
 

@@ -1,9 +1,9 @@
-import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../snippet/runner";
-import { range, cloneArray, removeArrayValue } from "../snippet/array";
-import { treeSearch } from "../snippet/treeSearch";
-import { bipartiteMatching } from "../snippet/bipartiteMatching";
-import { logger } from "../snippet/logger";
-import { get202005Sample } from "./samples/2020_0_5_sample";
+import { runner, loadSample, getParsedSplitedLine, loadStdin } from "../../snippet/runner";
+import { range, cloneArray, removeArrayValue } from "../../snippet/array";
+import { treeSearch } from "../../snippet/treeSearch";
+import { bipartiteMatching } from "../../snippet/bipartiteMatching";
+import { logger } from "../../snippet/logger";
+import { get202005Sample } from "./2020_0_5.sample";
 
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209aa0
 
